@@ -546,21 +546,14 @@ footer {
   transition: box-shadow 0.35s; border: 1px solid rgba(184,150,106,0.12);
   color: inherit;
 }
-.plan-card:hover { box-shadow: 0 12px 48px rgba(26,23,20,0.14); z-index: 2; }
 .plan-card-image {
   width: 100%; aspect-ratio: 4 / 5; overflow: hidden;
   position: relative; flex-shrink: 0; background: var(--warm);
 }
 .plan-card-image img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
-  display: block; transition: transform 0.5s ease; padding: 1rem;
+  display: block; padding: 1rem;
 }
-.plan-card:hover .plan-card-image img { transform: scale(1.03); }
-.plan-card-image::after {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(184,150,106,0.55); opacity: 0; transition: opacity 0.35s; pointer-events: none;
-}
-.plan-card:hover .plan-card-image::after { opacity: 1; }
 .plan-card-info {
   padding: 2.5rem 2rem 2rem; display: flex; flex-direction: column; flex: 1;
   border-top: 1px solid rgba(184,150,106,0.12);
@@ -583,7 +576,6 @@ footer {
   font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400;
   color: var(--dark); transition: gap 0.25s, color 0.25s;
 }
-.plan-card:hover .plan-card-cta { gap: 1.2rem; color: var(--gold); }
 
 .features-band {
   background: var(--paper); padding: 5rem 4rem;
