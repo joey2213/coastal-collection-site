@@ -1735,8 +1735,12 @@ footer {
       <p class="section-eyebrow">Get in touch</p>
       <h2 class="section-title">Schedule a <em>tour</em></h2>
       <span class="rule-left"></span>
-      <p class="form-intro">Tell us which plan you are looking at. This preview does not send a message — use the mail link after, or call Tessa directly.</p>
-      <form id="tour-form" action="mailto:tessasandershomes@gmail.com" method="post" enctype="text/plain" novalidate>
+      <p class="form-intro">Tell us which plan you are looking at. Tessa or Vali will follow up.</p>
+      <form id="tour-form" name="interest-list" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="interest-list">
+        <p style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="first">First name</label>
@@ -1783,12 +1787,12 @@ footer {
         </div>
         <div class="form-submit-row">
           <button class="btn-submit" type="submit">Send inquiry →</button>
-          <p class="form-privacy">Preview only. Nothing is posted to a server.</p>
+          <p class="form-privacy">Your information is only used to follow up about The Coastal Collection.</p>
         </div>
       </form>
       <div class="form-success" id="form-success" role="status">
-        <p class="success-title">Preview only — <em>nothing was sent.</em></p>
-        <p class="success-text">This listing page does not have a live form backend yet. Use <a id="mailto-fallback" href="mailto:tessasandershomes@gmail.com?subject=Coastal%20Collection%20Interest%20List">mailto: tessasandershomes@gmail.com</a> or call 805.704.2442.</p>
+        <p class="success-title">Request <em>received.</em></p>
+        <p class="success-text">Tessa or Vali will be in touch shortly. You can also call 805.704.2442.</p>
       </div>
     </div>
 
@@ -2069,31 +2073,39 @@ footer {
 
   var form = document.getElementById("tour-form");
   var success = document.getElementById("form-success");
-  var mail = document.getElementById("mailto-fallback");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var fd = new FormData(form);
-      var interests = [];
-      form.querySelectorAll('input[name="interest"]:checked').forEach(function (c) {
-        interests.push(c.value);
+      var payload = {};
+      fd.forEach(function (value, key) {
+        if (key === "interest") {
+          payload[key] = payload[key] ? payload[key] + ", " + value : value;
+        } else {
+          payload[key] = value;
+        }
       });
-      var lines = [
-        "The Coastal Collection — tour inquiry",
-        "Name: " + (fd.get("first") || "") + " " + (fd.get("last") || ""),
-        "Email: " + (fd.get("email") || ""),
-        "Phone: " + (fd.get("phone") || ""),
-        "Plan: " + (fd.get("plan") || "n/a"),
-        "Interest: " + (interests.join(", ") || "n/a"),
-        "",
-        fd.get("message") || ""
-      ];
-      var href = "mailto:tessasandershomes@gmail.com?subject=" +
-        encodeURIComponent("Coastal Collection Interest List") +
-        "&body=" + encodeURIComponent(lines.join("\n"));
-      if (mail) mail.setAttribute("href", href);
-      form.style.display = "none";
-      if (success) success.classList.add("visible");
+      var body = Object.keys(payload).map(function (k) {
+        return encodeURIComponent(k) + "=" + encodeURIComponent(payload[k]);
+      }).join("&");
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; }
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body
+      }).then(function (res) {
+        if (!res.ok) throw new Error("fail");
+        form.style.display = "none";
+        if (success) success.classList.add("visible");
+      }).catch(function () {
+        if (success) {
+          success.innerHTML = "<p class=\"success-title\">Couldn\u2019t send.</p><p class=\"success-text\">Please call 805.704.2442 or email tessasandershomes@gmail.com.</p>";
+          success.classList.add("visible");
+        }
+      }).finally(function () {
+        if (btn) { btn.disabled = false; }
+      });
     });
   }
 
