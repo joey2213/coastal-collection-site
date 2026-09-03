@@ -370,11 +370,6 @@ nav.scrolled, nav.inner {
   width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
 }
 .home-card:hover .home-card-image img { transform: scale(1.04); }
-.home-card-image::after {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(184,150,106,0.55); opacity: 0; transition: opacity 0.35s;
-}
-.home-card:hover .home-card-image::after { opacity: 1; }
 .home-card-top {
   background: var(--dark); padding: 1.6rem 2rem; text-align: center; position: relative;
 }
