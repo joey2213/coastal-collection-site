@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Coastal Collection | Grover Beach, CA</title>
+<meta name="description" content="Four newly built residences at 805-835 Trouville Avenue in Grover Beach, California. Vista and Garden floor plans, private rooftop decks, blocks from the ocean.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* The Coastal Collection — Grover Beach
+   Palette, type, and motion aligned to the specified listing system · Coastal Collection copy and photos */
+
+:root {
+  --gold: #b8966a;
+  --gold-light: #d4b483;
+  --gold-dark: #856436;
+  --cream: #f7f3ed;
+  --dark: #1a1714;
+  --mid: #3d3630;
+  --text: #4a4037;
+  --paper: #f0ebe3;
+  --warm: #faf8f4;
+  --footer: #110f0c;
+  --builder: #2c2420;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Jost", sans-serif;
+  --hairline: 1px solid rgba(184, 150, 106, 0.2);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  font-weight: 300;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font-family: inherit; border-radius: 0; }
+iframe { border: 0; }
+
+.skip-link {
+  position: absolute; left: -9999px; z-index: 9999;
+  background: var(--gold); color: var(--dark);
+  padding: .75rem 1.5rem; font-size: .75rem;
+  letter-spacing: .1em; text-transform: uppercase; font-weight: 500; text-decoration: none;
+}
+.skip-link:focus { position: fixed; left: 50%; top: 0; transform: translateX(-50%); }
+
+/* ── HASH VIEWS ── */
+.view { display: none; }
+.view.is-active { display: block; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 80px;
+  background: linear-gradient(to bottom, rgba(20, 16, 12, 0.82) 0%, transparent 100%);
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled, nav.inner {
+  background: rgba(26, 23, 20, 0.95);
+  backdrop-filter: blur(14px);
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 0.7rem;
+  text-decoration: none; color: #fff; flex-shrink: 0;
+}
+.nav-logo svg { width: 38px; height: 38px; display: block; }
+.nav-logo span {
+  font-family: var(--font-body); font-weight: 400;
+  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase;
+  line-height: 1.25; color: #fff;
+}
+.nav-logo:hover span { color: var(--gold-light); }
+
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.82); text-decoration: none; white-space: nowrap;
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 300; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+
+.nav-cta {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 400; color: var(--dark); background: var(--gold-light);
+  padding: 0.6rem 1.5rem; text-decoration: none; transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: #fff; }
+.nav-cta.active { background: #fff; }
+
+.nav-toggle { display: none; }
+
+/* ── HERO (homepage) ── */
+.hero {
+  position: relative; height: 100vh; min-height: 700px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; overflow: hidden;
+  padding-top: 6.5rem; padding-bottom: clamp(9rem, 26vh, 28rem);
+}
+.hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+  transform: scale(1.04);
+  animation: heroZoom 12s ease-out forwards;
+}
+@keyframes heroZoom { from { transform: scale(1.04); } to { transform: scale(1); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,16,12,0.15) 0%, rgba(20,16,12,0.08) 40%, rgba(20,16,12,0.6) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center; padding: 0 2rem;
+  animation: fadeUp 1.2s 0.3s both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-title {
+  font-family: var(--font-heading); font-weight: 300;
+  font-size: clamp(4.5rem, 10vw, 8.5rem); line-height: 0.92;
+  color: #fff; letter-spacing: -0.01em; margin-bottom: 1.2rem;
+}
+.hero-title em { font-style: italic; color: #fff; font-weight: 300; }
+.hero-divider { width: 60px; height: 1px; background: #fff; margin: 0 auto 2.8rem; }
+.hero-sub {
+  font-family: var(--font-heading); font-style: italic; font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.65rem); color: #fff;
+  letter-spacing: 0.06em; margin-bottom: 2.8rem;
+}
+.hero-btn {
+  display: inline-block; font-weight: 400;
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--dark); background: var(--gold-light); padding: 1rem 2.6rem;
+  text-decoration: none; transition: background 0.25s, transform 0.25s;
+}
+.hero-btn:hover { background: #fff; transform: translateY(-2px); }
+.hero-note { text-shadow: 0 1px 8px rgba(20,16,12,0.8); 
+  display: block; margin-top: 1.25rem;
+  font-size: 0.7rem; line-height: 1.6; font-weight: 300;
+  color: rgba(255,255,255,0.7); max-width: 420px; margin-left: auto; margin-right: auto;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 0; right: 0;
+  margin: 0 auto; width: max-content; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  animation: fadeUp 1.2s 1.2s both;
+}
+.hero-scroll span {
+  font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.88); font-weight: 300;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.88), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* ── INNER PAGE HERO ── */
+.page-hero {
+  height: 520px; position: relative;
+  display: flex; align-items: flex-end; overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 45%;
+  transform: scale(1.04);
+  animation: heroZoom 12s ease-out forwards;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(26,23,20,0.18) 0%, rgba(26,23,20,0.75) 100%);
+}
+.page-hero.heavy .page-hero-overlay {
+  background: linear-gradient(180deg, rgba(26,23,20,0.35) 0%, rgba(26,23,20,0.75) 100%);
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  padding: 3.5rem 4rem; width: 100%;
+  animation: fadeUp 1s 0.3s both;
+}
+.page-hero-label {
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 0.8rem;
+}
+.page-hero-title {
+  font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300; color: #fff; line-height: 1;
+}
+.page-hero-title em { font-style: italic; color: var(--gold-light); }
+.page-hero-sub {
+  font-size: 0.82rem; color: rgba(255,255,255,0.88); font-weight: 300;
+  margin-top: 0.8rem; letter-spacing: 0.05em;
+}
+.page-hero .hero-divider { width: 48px; background: var(--gold); margin: 1.4rem 0; }
+
+/* ── STATS ── */
+.intro-band {
+  background: var(--dark); color: rgba(255,255,255,0.85); text-align: center;
+  padding: 3.5rem 2rem; display: flex; align-items: center; justify-content: center;
+  gap: 3rem; flex-wrap: wrap;
+}
+.stat { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+.stat-num {
+  font-family: var(--font-heading); font-size: 2.4rem; font-weight: 300;
+  color: var(--gold-light); line-height: 1;
+}
+.stat-label {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.80); font-weight: 300;
+}
+.stat-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.15); }
+
+/* ── SHARED TYPE ── */
+.section { padding: 7rem 4rem; }
+.section-label, .section-eyebrow {
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 1rem;
+}
+.section-eyebrow { letter-spacing: 0.35em; margin-bottom: 0.6rem; }
+.section-title {
+  font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300; color: var(--dark); line-height: 1.05; margin-bottom: 4rem;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-rule { display: block; width: 48px; height: 1px; background: var(--gold); margin: 0 auto 3.5rem; }
+.rule-left { width: 48px; height: 1px; background: var(--gold); margin: 0 0 2.2rem; }
+
+/* ── WHY ── */
+.why-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 300; color: var(--dark); line-height: 1; margin-bottom: 1rem;
+}
+.why-title em { font-style: italic; color: var(--gold); }
+.why-subtitle {
+  font-family: var(--font-heading); font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 300; color: var(--gold); margin-bottom: 4rem; max-width: 640px;
+}
+
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: var(--hairline);
+}
+.feature-card {
+  padding: 3rem 2.5rem; border-right: var(--hairline); border-bottom: var(--hairline);
+  transition: background 0.3s;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.feature-card:nth-child(3n) { border-right: none; }
+.feature-card:nth-last-child(-n+3) { border-bottom: none; }
+.feature-card:hover { background: rgba(184,150,106,0.05); }
+.feature-icon { width: 80px; height: 80px; margin-bottom: 1.5rem; }
+.feature-icon svg { width: 80px; height: 80px; display: block; }
+.feature-title {
+  font-family: var(--font-heading); font-size: 1.4rem; font-weight: 400;
+  color: var(--dark); margin-bottom: 0.8rem;
+}
+.feature-text { font-size: 0.82rem; line-height: 1.7; color: var(--text); font-weight: 300; }
+
+.overview { max-width: 820px; margin: 4.5rem auto 0; text-align: center; }
+.overview h3 {
+  font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300; color: var(--dark); line-height: 1.15; margin-bottom: 1.25rem;
+}
+.overview p {
+  font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--text); margin-bottom: 1rem;
+}
+.overview p:last-child { margin-bottom: 0; }
+
+/* ── LIFESTYLE ── */
+.lifestyle { display: grid; grid-template-columns: 1fr 1fr; min-height: 620px; }
+.lifestyle-image { position: relative; overflow: hidden; min-height: 420px; }
+.lifestyle-image img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 55%;
+  transition: transform 0.6s ease;
+}
+.lifestyle-image:hover img { transform: scale(1.04); }
+.lifestyle-image-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(20,16,12,0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+.lifestyle-content {
+  background: var(--dark); padding: 6rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.lifestyle-content .section-label { color: var(--gold); }
+.lifestyle-title {
+  font-family: var(--font-heading); font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300; color: #fff; line-height: 1.08; margin-bottom: 2.5rem;
+}
+.lifestyle-title em { font-style: italic; color: var(--gold-light); }
+.lifestyle-points { list-style: none; display: flex; flex-direction: column; gap: 1.8rem; }
+.lifestyle-points li { display: flex; gap: 1.2rem; align-items: flex-start; }
+.point-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+  margin-top: 0.5rem; flex-shrink: 0;
+}
+.point-text { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.75); font-weight: 300; }
+.point-text strong {
+  color: var(--gold-light); font-weight: 400; display: block; margin-bottom: 0.2rem;
+  font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* ── AMBIENCE ── */
+.ambience {
+  position: relative; padding: 8rem 4rem; background: var(--cream);
+  display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: stretch;
+}
+.ambience-img-wrap { position: relative; display: flex; flex-direction: column; }
+.ambience-img-wrap img {
+  width: 100%; flex: 1; min-height: 400px; object-fit: cover; display: block;
+}
+.ambience-img-accent {
+  position: absolute; bottom: -1.5rem; right: -1.5rem;
+  width: 60%; height: 60%; border: 1px solid var(--gold); z-index: -1;
+}
+.ambience-quote {
+  font-family: var(--font-heading); font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300;
+  color: var(--dark); line-height: 1.35; margin-bottom: 2rem;
+}
+.ambience-quote em, .ambience-quote span { color: var(--gold); font-style: italic; }
+.ambience-body {
+  font-size: 0.85rem; line-height: 1.9; color: var(--text);
+  font-weight: 300; margin-bottom: 1.5rem;
+}
+.ambience-note { font-size: 0.75rem; line-height: 1.6; color: rgba(74,64,55,0.65); font-style: italic; }
+.gold-link {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 400; color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid var(--gold); padding-bottom: 0.2rem;
+  transition: gap 0.2s, color 0.2s;
+}
+.gold-link:hover { gap: 1.3rem; color: var(--dark); }
+
+/* ── COLLECTION ── */
+.homes { padding: 7rem 4rem; background: var(--paper); }
+.homes-header { text-align: center; margin-bottom: 4rem; }
+.homes-header .section-title { margin-bottom: 0.5rem; text-align: center; }
+.homes-sub {
+  font-size: 0.82rem; color: var(--text); font-weight: 300; opacity: 0.75; margin-top: 0.6rem;
+}
+.homes-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; max-width: 980px; margin: 0 auto;
+}
+.home-card {
+  background: #fff; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+  text-decoration: none; color: inherit; display: flex; flex-direction: column;
+}
+.home-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+.home-card-image { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+.home-card-image img {
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+}
+.home-card:hover .home-card-image img { transform: scale(1.04); }
+.home-card-image::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(184,150,106,0.55); opacity: 0; transition: opacity 0.35s;
+}
+.home-card:hover .home-card-image::after { opacity: 1; }
+.home-card-top {
+  background: var(--dark); padding: 1.6rem 2rem; text-align: center; position: relative;
+}
+.home-card-top::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+}
+.home-name {
+  font-family: var(--font-heading); font-size: 1.8rem; font-weight: 300;
+  color: #fff; margin-bottom: 0.3rem;
+}
+.home-sqft {
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 300;
+}
+.home-card-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+.home-specs { display: flex; border-top: 1px solid rgba(0,0,0,0.07); padding-top: 1.2rem; margin-bottom: 1.5rem; }
+.home-spec { flex: 1; text-align: center; }
+.home-spec + .home-spec { border-left: 1px solid rgba(0,0,0,0.07); }
+.spec-num { font-family: var(--font-heading); font-size: 1.5rem; color: var(--dark); font-weight: 400; }
+.spec-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #5a5047; }
+.home-card-tag {
+  font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 0.8rem; display: block;
+}
+.home-card-desc {
+  font-size: 0.875rem; line-height: 1.65; color: var(--text);
+  font-weight: 300; margin-bottom: 1.5rem; flex: 1;
+}
+.home-card-link {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; font-weight: 400;
+  display: flex; align-items: center; gap: 0.5rem; transition: gap 0.2s;
+}
+.home-card:hover .home-card-link { gap: 0.9rem; }
+
+/* ── FIND US ── */
+.location { background: var(--warm); padding: 5rem 2.5rem; text-align: center; }
+.location .section-label { text-align: center; }
+.location-title {
+  font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300; color: var(--dark); margin-bottom: 0.75rem; line-height: 1.1;
+}
+.location-title em { font-style: italic; color: var(--gold-dark); }
+.location-row {
+  display: flex; gap: 4rem; align-items: center;
+  max-width: 1050px; margin: 0 auto; text-align: left;
+}
+.location-info { flex: 0 0 auto; min-width: 280px; max-width: 320px; }
+.location-addr {
+  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 300;
+  color: var(--dark); margin-bottom: 0.25rem; letter-spacing: 0.02em;
+}
+.location-city {
+  font-size: 0.85rem; font-weight: 300; color: var(--text);
+  opacity: 0.7; margin-bottom: 1.4rem; letter-spacing: 0.06em;
+}
+.location-pin {
+  width: 100%; height: 140px; object-fit: cover; object-position: center;
+  margin-bottom: 1.6rem; border: var(--hairline);
+}
+.location-map {
+  flex: 1; min-width: 0; overflow: hidden;
+  box-shadow: 0 4px 30px rgba(44,36,32,0.12);
+}
+.location-map iframe { width: 100%; height: 340px; display: block; }
+
+/* ── DARK CTA ── */
+.cta-section {
+  background: var(--dark); text-align: center; padding: 7rem 4rem;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: "COASTAL";
+  position: absolute; font-family: var(--font-heading); font-size: 16vw; font-weight: 300;
+  color: rgba(255,255,255,0.03); white-space: nowrap;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  letter-spacing: 0.1em; pointer-events: none;
+}
+.cta-title {
+  font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300; color: #fff; margin-bottom: 1rem; line-height: 1.1; position: relative;
+}
+.cta-title em { font-style: italic; color: var(--gold-light); }
+.cta-sub {
+  font-size: 0.85rem; color: rgba(255,255,255,0.85); font-weight: 300;
+  margin-bottom: 3rem; letter-spacing: 0.05em; position: relative;
+}
+.cta-sub a { color: var(--gold-light); text-decoration: none; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+.btn-primary {
+  display: inline-block; padding: 1rem 2.8rem; background: var(--gold); color: var(--dark);
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; font-weight: 400; transition: background 0.25s; border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-light); }
+.btn-ghost {
+  display: inline-block; padding: 1rem 2.8rem; border: 1px solid rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.8); font-size: 0.75rem; letter-spacing: 0.2em;
+  text-transform: uppercase; text-decoration: none; font-weight: 300;
+  transition: border-color 0.25s, color 0.25s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+
+.cta-strip { background: var(--dark); text-align: center; padding: 5rem 4rem; }
+.cta-strip-title {
+  font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300; color: #fff; margin-bottom: 0.8rem;
+}
+.cta-strip-title em { font-style: italic; color: var(--gold-light); }
+.cta-strip-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; font-weight: 300; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--footer); padding: 2.5rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1.2rem;
+}
+.footer-brand { display: flex; align-items: center; gap: 0.7rem; }
+.footer-brand svg { width: 32px; height: 32px; opacity: 0.7; }
+.footer-brand span {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); font-weight: 400;
+}
+.footer-contact {
+  font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 300;
+  text-align: center; line-height: 1.8;
+}
+.footer-contact a { color: var(--gold); text-decoration: none; }
+.footer-contact a:hover { color: var(--gold-light); }
+.footer-legal {
+  font-size: 0.75rem; color: rgba(255,255,255,0.65); letter-spacing: 0.05em;
+  text-align: right; line-height: 1.8;
+}
+.footer-legal a { color: inherit; text-decoration: none; }
+.footer-legal a:hover { color: var(--gold-light); }
+.footer-social { display: flex; gap: 1rem; justify-content: flex-end; margin-top: 0.4rem; }
+.footer-social a {
+  font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+}
+
+/* ── PLANS PAGE ── */
+.intro-strip {
+  background: var(--dark); padding: 2.5rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 3rem; flex-wrap: wrap;
+}
+.intro-strip-text {
+  font-family: var(--font-heading); font-size: 1.4rem; font-style: italic;
+  color: rgba(255,255,255,0.75); font-weight: 300; max-width: 560px;
+}
+.intro-strip-stats { display: flex; gap: 3rem; }
+.intro-strip .stat-num { font-size: 2.2rem; }
+.intro-strip .stat-lbl {
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.72); margin-top: 0.3rem; font-weight: 300;
+}
+
+.plans-section { padding: 6rem 4rem; }
+.plans-section .section-title { text-align: center; margin-bottom: 1rem; font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.plans-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; max-width: 1200px; margin: 0 auto;
+}
+.plan-card {
+  background: #fff; display: flex; flex-direction: column;
+  text-decoration: none; overflow: hidden; position: relative;
+  transition: box-shadow 0.35s; border: 1px solid rgba(184,150,106,0.12);
+  color: inherit;
+}
+.plan-card:hover { box-shadow: 0 12px 48px rgba(26,23,20,0.14); z-index: 2; }
+.plan-card-image {
+  width: 100%; aspect-ratio: 4 / 5; overflow: hidden;
+  position: relative; flex-shrink: 0; background: var(--warm);
+}
+.plan-card-image img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  display: block; transition: transform 0.5s ease; padding: 1rem;
+}
+.plan-card:hover .plan-card-image img { transform: scale(1.03); }
+.plan-card-image::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(184,150,106,0.55); opacity: 0; transition: opacity 0.35s; pointer-events: none;
+}
+.plan-card:hover .plan-card-image::after { opacity: 1; }
+.plan-card-info {
+  padding: 2.5rem 2rem 2rem; display: flex; flex-direction: column; flex: 1;
+  border-top: 1px solid rgba(184,150,106,0.12);
+}
+.plan-card-eyebrow {
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 0.4rem;
+}
+.plan-card-name {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 300;
+  color: var(--dark); line-height: 1; margin-bottom: 0.3rem;
+}
+.plan-card-tagline {
+  font-family: var(--font-heading); font-style: italic; font-size: 0.95rem;
+  color: var(--gold); margin-bottom: 1.4rem;
+}
+.plan-card-desc { font-size: 0.875rem; line-height: 1.75; color: var(--text); font-weight: 300; margin-bottom: 1.8rem; }
+.plan-card-cta {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400;
+  color: var(--dark); transition: gap 0.25s, color 0.25s;
+}
+.plan-card:hover .plan-card-cta { gap: 1.2rem; color: var(--gold); }
+
+.features-band {
+  background: var(--paper); padding: 5rem 4rem;
+  border-top: var(--hairline); border-bottom: var(--hairline);
+}
+.features-band-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 4rem; max-width: 1100px; margin: 0 auto;
+}
+.feature-block { text-align: center; }
+.feature-block img {
+  width: 100%; height: 180px; object-fit: cover; margin-bottom: 1.4rem;
+  transition: transform 0.5s ease;
+}
+.feature-block { overflow: hidden; }
+.feature-block:hover img { transform: scale(1.04); }
+.feature-block-title {
+  font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--dark); font-weight: 400; margin-bottom: 0.6rem;
+}
+.feature-block-text { font-size: 0.875rem; line-height: 1.85; color: var(--text); font-weight: 300; }
+
+/* ── AVAILABLE ── */
+.status-band {
+  background: var(--dark); text-align: center; padding: 2.2rem 2rem;
+  border-bottom: 1px solid rgba(184,150,106,0.15);
+}
+.status-kicker {
+  font-size: 0.75rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 400; margin-bottom: 0.6rem;
+}
+.status-band p {
+  font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.72);
+  font-weight: 300; max-width: 640px; margin: 0 auto;
+}
+
+.avail-section { padding: 5rem 4rem; }
+.avail-section .section-title { text-align: center; margin-bottom: 1rem; font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.avail-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; max-width: 1100px; margin: 0 auto;
+}
+.avail-card {
+  background: #fff; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.avail-card:hover { box-shadow: 0 12px 48px rgba(26,23,20,0.12); transform: translateY(-3px); z-index: 2; }
+.card-badge {
+  position: absolute; top: 1rem; left: 1rem; z-index: 3;
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400;
+  padding: 0.3rem 0.75rem; background: var(--gold); color: var(--dark);
+}
+.card-visual { height: 210px; position: relative; overflow: hidden; background: var(--dark); }
+.card-visual img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transition: transform 0.5s ease;
+}
+.avail-card:hover .card-visual img { transform: scale(1.05); }
+.card-body { padding: 1.8rem 1.8rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.card-lot-tag {
+  font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 0.3rem;
+}
+.card-plan-name {
+  font-family: var(--font-heading); font-size: 1.55rem; font-weight: 300;
+  color: var(--dark); line-height: 1.05; margin-bottom: 0.15rem;
+}
+.card-tagline {
+  font-family: var(--font-heading); font-style: italic; font-size: 0.88rem;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.card-specs { display: flex; border-top: 1px solid rgba(184,150,106,0.15); padding-top: 1rem; margin-bottom: 1.2rem; }
+.card-spec { flex: 1; text-align: center; border-right: 1px solid rgba(184,150,106,0.12); }
+.card-spec:last-child { border-right: none; }
+.cs-num { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 300; color: var(--dark); line-height: 1; }
+.cs-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(74,64,55,0.80); margin-top: 0.2rem; }
+.card-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 400;
+  color: var(--dark); text-decoration: none; padding: 0.5rem 1.1rem;
+  border: 1px solid rgba(184,150,106,0.35);
+  transition: background 0.2s, border-color 0.2s, gap 0.2s; align-self: flex-start;
+}
+.avail-card:hover .card-link { background: var(--gold); border-color: var(--gold); gap: 0.8rem; }
+
+.video-section { padding: 0 4rem 5rem; max-width: 1100px; margin: 0 auto; }
+.video-frame {
+  position: relative; padding-bottom: 56.25%; background: #000;
+  border: 1px solid rgba(184,150,106,0.3);
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.video-caption {
+  font-size: 0.75rem; letter-spacing: 0.08em; color: rgba(74,64,55,0.7);
+  padding: 0.9rem 0 0; font-weight: 300;
+}
+.disclaimer {
+  max-width: 720px; margin: 0 auto; padding: 0 4rem 5rem;
+  font-size: 0.78rem; line-height: 1.7; color: rgba(74,64,55,0.7);
+  font-weight: 300; text-align: center;
+}
+
+/* ── ABOUT ── */
+.story-section { background: var(--cream); padding: 7rem 4rem; }
+.story-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
+.story-body p { font-size: 0.88rem; line-height: 1.9; color: var(--text); font-weight: 300; margin-bottom: 1.4rem; }
+.story-quote-col {
+  display: flex; align-items: center; justify-content: center; padding: 3rem;
+  border-left: 1px solid rgba(184,150,106,0.25);
+}
+.pull-quote {
+  font-family: var(--font-heading); font-style: italic;
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300;
+  color: var(--gold); line-height: 1.3; text-align: center; position: relative;
+}
+.pull-quote::before, .pull-quote::after {
+  display: block; font-size: 5rem; color: rgba(184,150,106,0.2); line-height: 0.6;
+}
+.pull-quote::before { content: "\201C"; margin-bottom: 1rem; }
+.pull-quote::after { content: "\201D"; margin-top: 1rem; }
+
+.builder-section { background: var(--builder); padding: 7rem 4rem; text-align: center; }
+.builder-inner { max-width: 780px; margin: 0 auto; }
+.builder-rule { display: block; width: 60px; height: 1px; background: var(--gold); margin: 0 auto 2rem; }
+.builder-heading {
+  font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--gold-light); margin-bottom: 2rem; letter-spacing: 0.04em;
+}
+.builder-body p { font-size: 0.88rem; line-height: 1.9; color: rgba(255,255,255,0.72); font-weight: 300; }
+.builder-final-quote {
+  font-family: var(--font-heading); font-style: italic;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 300; color: var(--gold);
+  line-height: 1.4; margin-top: 3rem; padding-top: 3rem;
+  border-top: 1px solid rgba(184,150,106,0.2);
+}
+
+.pillars-section { background: #f0ece4; padding: 7rem 4rem; }
+.pillars-inner { max-width: 1200px; margin: 0 auto; }
+.pillars-header { text-align: center; margin-bottom: 4rem; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.pillar-card {
+  background: #fff; padding: 3rem 2.5rem; border: 1px solid rgba(184,150,106,0.15);
+  text-align: center; transition: box-shadow 0.3s, transform 0.3s;
+}
+.pillar-card:hover { box-shadow: 0 8px 32px rgba(184,150,106,0.12); transform: translateY(-3px); }
+.pillar-icon {
+  width: 56px; height: 56px; border: 1px solid rgba(184,150,106,0.4);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 1.8rem;
+}
+.pillar-icon svg { width: 24px; height: 24px; }
+.pillar-title {
+  font-family: var(--font-heading); font-size: 1.4rem; font-weight: 300;
+  color: var(--dark); margin-bottom: 1rem;
+}
+.pillar-text { font-size: 0.82rem; line-height: 1.85; color: var(--text); font-weight: 300; }
+
+.team-section { background: var(--warm); padding: 7rem 4rem; border-top: 1px solid rgba(184,150,106,0.12); }
+.team-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.team-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; max-width: 820px; margin: 0 auto;
+}
+.team-card { background: #fff; border: 1px solid rgba(184,150,106,0.2); padding: 2.5rem 2rem; }
+.team-photo {
+  width: 150px; height: 150px; margin: 0 auto 1.4rem; display: block;
+  object-fit: cover; object-position: center top; border: 2px solid var(--gold);
+}
+.team-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 400; color: var(--dark); margin-bottom: 0.35rem; }
+.team-title {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-dark); font-weight: 500; margin-bottom: 1.1rem;
+}
+.team-bio { font-size: 0.85rem; line-height: 1.85; color: var(--text); font-weight: 300; margin-bottom: 1.3rem; }
+.team-contact { font-size: 0.85rem; line-height: 2; font-weight: 300; }
+.team-contact a { color: var(--gold-dark); text-decoration: none; display: block; }
+.team-contact a:hover { text-decoration: underline; }
+
+.lender-section { background: #fff; padding: 7rem 4rem; border-top: 1px solid rgba(184,150,106,0.12); }
+.lender-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 320px; gap: 5rem; align-items: center;
+}
+.lender-heading {
+  font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--dark); line-height: 1.1; margin-bottom: 1.2rem;
+}
+.lender-heading em { font-style: italic; color: var(--gold); }
+.lender-bio { font-size: 0.88rem; line-height: 1.9; color: var(--text); font-weight: 300; margin-bottom: 1.2rem; }
+.lender-contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; font-size: 0.875rem; }
+.lender-contact-links a {
+  color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid rgba(184,150,106,0.35); padding-bottom: 1px;
+}
+.lender-btn {
+  display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #fff; background: var(--dark); padding: 1rem 2.4rem; text-decoration: none;
+  transition: background 0.25s, transform 0.25s;
+}
+.lender-btn:hover { background: var(--gold); transform: translateY(-2px); }
+.lender-photo-wrap img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; }
+.lender-logo-bar {
+  margin-top: 1.2rem; text-align: center; font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark);
+}
+
+/* ── CONTACT ── */
+.quick-band {
+  background: var(--dark); display: flex; flex-wrap: wrap;
+  border-bottom: 1px solid rgba(184,150,106,0.15);
+}
+.quick-item {
+  flex: 1; min-width: 140px;
+  display: flex; flex-direction: column; align-items: center; gap: 0.85rem;
+  padding: 2rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none; transition: background 0.2s; text-align: center;
+}
+.quick-item:last-child { border-right: none; }
+.quick-item:hover { background: rgba(255,255,255,0.03); }
+.quick-icon {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border: 1px solid rgba(184,150,106,0.35); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.quick-icon svg { width: 16px; height: 16px; }
+.quick-label {
+  font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 0.25rem;
+}
+.quick-value {
+  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 300;
+  color: #fff; overflow-wrap: break-word;
+}
+
+.contact-body {
+  display: grid; grid-template-columns: 1fr 1fr;
+  max-width: 1240px; margin: 0 auto; padding: 6rem 4rem; gap: 6rem; align-items: start;
+}
+.form-intro { font-size: 0.84rem; line-height: 1.85; color: var(--text); font-weight: 300; margin-bottom: 2.5rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 1.5rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; color: var(--mid); }
+.form-input, .form-select, .form-textarea {
+  width: 100%; background: #fff; border: 1px solid rgba(184,150,106,0.25);
+  padding: 0.85rem 1.1rem; font-size: 0.82rem; font-weight: 300; color: var(--dark);
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; border-radius: 0;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold); outline: 2px solid var(--gold); outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(184,150,106,0.55);
+}
+.form-textarea { min-height: 130px; resize: vertical; }
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8966a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;
+}
+.checkbox-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.2rem; }
+.checkbox-label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; letter-spacing: 0.05em; color: var(--text); font-weight: 300;
+  cursor: pointer; padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(184,150,106,0.25); background: #fff;
+  transition: background 0.2s, border-color 0.2s, color 0.2s; user-select: none;
+}
+.checkbox-label input { display: none; }
+.checkbox-label:has(input:checked) { background: var(--gold); border-color: var(--gold); color: var(--dark); font-weight: 400; }
+.check-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(184,150,106,0.5); flex-shrink: 0; }
+.checkbox-label:has(input:checked) .check-dot { background: var(--dark); }
+.form-submit-row { margin-top: 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.btn-submit {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  padding: 1.1rem 3rem; background: var(--gold); color: var(--dark);
+  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400;
+  border: none; cursor: pointer; transition: background 0.25s, gap 0.25s;
+}
+.btn-submit:hover { background: var(--gold-light); gap: 1.2rem; }
+.form-privacy { font-size: 0.75rem; color: rgba(74,64,55,0.80); font-weight: 300; line-height: 1.5; }
+.form-success {
+  display: none; background: rgba(184,150,106,0.1);
+  border: 1px solid rgba(184,150,106,0.3); padding: 2rem 2.5rem; margin-top: 2rem;
+}
+.form-success.visible { display: block; }
+.success-title { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 300; color: var(--dark); margin-bottom: 0.4rem; }
+.success-title em { font-style: italic; color: var(--gold); }
+.success-text { font-size: 0.875rem; line-height: 1.7; color: var(--text); font-weight: 300; }
+.success-text a { color: var(--gold-dark); }
+
+.info-side { position: sticky; top: 110px; }
+.info-card { background: var(--dark); padding: 2.8rem 2.5rem; margin-bottom: 1.5rem; }
+.info-card-label {
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; margin-bottom: 1.6rem;
+}
+.info-row {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.info-row:last-child { border-bottom: none; padding-bottom: 0; }
+.info-row-icon {
+  width: 32px; height: 32px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(184,150,106,0.25);
+}
+.info-row-icon svg { width: 14px; height: 14px; }
+.info-row-label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.72); font-weight: 300; margin-bottom: 0.25rem; }
+.info-row-val { font-family: var(--font-heading); font-size: 1.05rem; color: #fff; font-weight: 300; line-height: 1.4; }
+.info-row-val a { color: var(--gold-light); text-decoration: none; }
+.map-card { position: relative; overflow: hidden; aspect-ratio: 4/3; border: 1px solid rgba(184,150,106,0.15); }
+.map-card iframe { width: 100%; height: 100%; display: block; }
+
+.tour-strip {
+  background: var(--paper); border-top: var(--hairline); border-bottom: var(--hairline);
+  padding: 4.5rem 4rem; text-align: center;
+}
+.tour-strip-title {
+  font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300; color: var(--dark); margin-bottom: 0.7rem;
+}
+.tour-strip-title em { font-style: italic; color: var(--gold); }
+.tour-strip-sub {
+  font-size: 0.8rem; color: rgba(74,64,55,0.65); font-weight: 300;
+  margin-bottom: 2.2rem; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.tour-steps { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 2.5rem; }
+.tour-step { display: flex; align-items: center; gap: 1rem; }
+.tour-step:not(:last-child)::after {
+  content: ""; display: block; width: 60px; height: 1px;
+  background: rgba(184,150,106,0.3); margin: 0 0.8rem;
+}
+.step-num {
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 1rem; font-weight: 300;
+  color: var(--gold); flex-shrink: 0;
+}
+.step-text { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); font-weight: 300; text-align: left; }
+
+/* ── FADE-UP (inner) ── */
+.fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: none; }
+
+/* ── WCAG gold on light ── */
+.section-eyebrow, .section-label, .why-subtitle, .why-title em,
+.ambience-quote em, .ambience-quote span, .pull-quote,
+.tour-strip-title em, .plan-card-eyebrow, .plan-card-tagline,
+.home-card-tag, .home-card-link, .card-lot-tag, .card-tagline,
+.section-title em, .success-title em, .lender-heading em,
+.location-title em, .gold-link {
+  color: var(--gold-dark);
+}
+.lifestyle-content .section-label,
+.home-card-top .home-sqft,
+.cta-section .section-label,
+.page-hero-label, .quick-label, .info-card-label,
+.status-kicker {
+  color: var(--gold) !important;
+}
+.lifestyle-title em, .cta-title em, .cta-strip-title em, .page-hero-title em {
+  color: var(--gold-light);
+}
+
+
+/* ── PHOTO MOSAIC ── */
+.gallery-wrap { padding: 0 4rem 5.5rem; }
+.gallery {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 220px;
+  gap: 6px;
+}
+.gallery-item { overflow: hidden; position: relative; background: var(--dark); }
+.gallery-item:first-child { grid-row: 1 / span 2; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-caption {
+  max-width: 1200px; margin: 0.8rem auto 0;
+  font-size: 0.75rem; color: rgba(74,64,55,0.65); font-weight: 300;
+}
+@media (max-width: 768px) {
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .gallery-item:first-child { grid-row: auto; grid-column: 1 / -1; height: 240px; }
+  .gallery-wrap { padding: 0 1.25rem 4rem; }
+}
+
+/* ── HAMBURGER ≤1180 ── */
+@media (max-width: 1180px) {
+  nav { padding: 0 1.25rem; }
+  .nav-logo span { font-size: 0.62rem; letter-spacing: 0.14em; max-width: 9rem; }
+  .nav-toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 42px; height: 42px; padding: 9px; margin-left: 0.75rem;
+    background: none; border: none; cursor: pointer; z-index: 120;
+  }
+  .nav-toggle span { display: block; height: 2px; width: 100%; background: #fff; transition: transform 0.3s, opacity 0.3s; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-cta { margin-left: auto; font-size: 0.75rem; padding: 0.55rem 1rem; }
+  .nav-links {
+    position: fixed; top: 80px; left: 0; right: 0; margin: 0;
+    flex-direction: column; gap: 0;
+    background: rgba(26,23,20,0.98); backdrop-filter: blur(14px);
+    padding: 0.5rem 0;
+    transform: translateY(-185%); transition: transform 0.35s ease;
+    max-height: calc(100vh - 80px); overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 1.1rem 1.5rem; font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+}
+
+@media (max-width: 360px) { .nav-cta { display: none; } }
+
+@media (max-width: 1200px) {
+  footer { flex-direction: column; text-align: center; gap: 1.25rem; }
+  .footer-contact, .footer-legal { text-align: center; }
+  .footer-social { justify-content: center; }
+}
+
+@media (max-width: 900px) {
+  .story-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .story-quote-col { border-left: none; border-top: 1px solid rgba(184,150,106,0.25); padding: 2.5rem 1rem 0; }
+  .pillars-grid, .features-band-grid { grid-template-columns: 1fr; }
+  .lender-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .lender-photo-wrap { max-width: 280px; margin: 0 auto; }
+  .plans-grid, .avail-grid, .homes-grid { grid-template-columns: 1fr; }
+  .location-row { flex-direction: column; text-align: center; }
+  .location-info { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 560px; height: auto; padding: 6rem 0 8rem; }
+  .hero-title { font-size: clamp(3rem, 14vw, 4.5rem); }
+  .intro-band { padding: 2.5rem 1.25rem; gap: 2rem; }
+  .section, .homes, .ambience, .cta-section, .plans-section, .avail-section,
+  .story-section, .builder-section, .pillars-section, .team-section,
+  .lender-section, .cta-strip, .features-band, .tour-strip { padding: 4.5rem 1.25rem; }
+  .page-hero { height: 380px; }
+  .page-hero-content { padding: 2.2rem 1.25rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 2.5rem 1.5rem; border-right: none !important; }
+  .feature-card:nth-last-child(-n+3) { border-bottom: var(--hairline); }
+  .feature-card:last-child { border-bottom: none; }
+  .lifestyle { grid-template-columns: 1fr; min-height: 0; }
+  .lifestyle-content { padding: 3.5rem 1.25rem; }
+  .ambience { grid-template-columns: 1fr; gap: 3rem; }
+  .ambience-img-accent { display: none; }
+  .contact-body { grid-template-columns: 1fr; padding: 3rem 1.25rem; gap: 3rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .info-side { position: static; }
+  .quick-item { flex: 1 1 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .tour-step:not(:last-child)::after { display: none; }
+  .tour-steps { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  .intro-strip { padding: 2rem 1.25rem; }
+  .video-section, .disclaimer { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .stat-divider { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto !important; }
+  .hero-bg, .page-hero-bg { transform: none; animation: none; }
+  .fade-up { opacity: 1; transform: none; }
+}
+
+/* ── SCHEDULE TOUR MODAL ── */
+.tour-modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(17, 15, 12, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem 1.25rem;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.tour-modal-overlay.open { opacity: 1; visibility: visible; }
+.tour-modal {
+  background: #fff; width: 100%; max-width: 560px; max-height: 90vh;
+  overflow-y: auto; position: relative;
+  transform: translateY(24px); transition: transform 0.35s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.tour-modal-overlay.open .tour-modal { transform: translateY(0); }
+.tour-modal-close {
+  position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2;
+  width: 36px; height: 36px; border: none; background: rgba(255,255,255,0.92);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s;
+}
+.tour-modal-close:hover { background: #fff; }
+.tour-modal-close svg { width: 16px; height: 16px; stroke: var(--dark); }
+.tour-modal-image { width: 100%; height: 220px; object-fit: cover; display: block; }
+.tour-modal-body { padding: 2.5rem 2.5rem 2rem; }
+.tour-modal-eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-dark); font-weight: 500; margin-bottom: 0.4rem;
+}
+.tour-modal-title {
+  font-family: var(--font-heading); font-size: 2.3rem; font-weight: 400;
+  color: var(--dark); margin-bottom: 0.9rem; line-height: 1;
+}
+.tour-modal-title em { font-style: italic; color: var(--gold-dark); }
+.tour-modal-rule { display: block; width: 48px; height: 2px; background: var(--gold); margin-bottom: 1.4rem; }
+.tour-modal-sub {
+  font-size: 0.85rem; line-height: 1.7; color: var(--text); font-weight: 300;
+  margin-bottom: 1.6rem;
+}
+.tour-modal-section-label {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--dark); font-weight: 500; margin: 1.6rem 0 1rem;
+  padding-top: 1.4rem; border-top: 1px solid rgba(184,150,106,0.2);
+}
+.tour-modal-body form > .tour-modal-section-label:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.tour-modal-section-label svg { width: 16px; height: 16px; stroke: var(--gold-dark); flex-shrink: 0; }
+.tour-modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-bottom: 0.9rem; }
+.tour-modal-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.9rem; }
+.tour-modal-field label {
+  font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(74,64,55,0.75); font-weight: 400;
+}
+.tour-modal-field input, .tour-modal-field select, .tour-modal-field textarea {
+  width: 100%; padding: 0.8rem 1rem; border: 1px solid rgba(184,150,106,0.3);
+  font-family: var(--font-body); font-size: 0.85rem; color: var(--dark);
+  background: #fff; outline: none; transition: border-color 0.2s; appearance: none; border-radius: 2px;
+}
+.tour-modal-field input:focus, .tour-modal-field select:focus, .tour-modal-field textarea:focus {
+  border-color: var(--gold);
+}
+.tour-modal-field textarea { min-height: 90px; resize: vertical; }
+.tour-modal-submit {
+  width: 100%; padding: 1rem; margin-top: 0.6rem;
+  background: var(--dark); color: #fff; border: none; cursor: pointer;
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+  transition: background 0.25s;
+}
+.tour-modal-submit:hover { background: var(--gold-dark); }
+.tour-modal-submit:disabled { opacity: 0.7; cursor: default; }
+.tour-modal-privacy {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 1.3rem;
+  font-size: 0.72rem; line-height: 1.6; color: rgba(74,64,55,0.7); text-align: center;
+}
+.tour-modal-privacy svg { width: 13px; height: 13px; stroke: rgba(74,64,55,0.6); flex-shrink: 0; }
+.tour-modal-privacy .row { display: flex; align-items: center; gap: 0.4rem; justify-content: center; }
+.tour-modal-success { display: none; text-align: center; padding: 1rem 0 0.5rem; }
+.tour-modal-success.visible { display: block; }
+.tour-modal-success h3 { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 400; color: var(--dark); margin-bottom: 0.8rem; }
+.tour-modal-success h3 em { font-style: italic; color: var(--gold-dark); }
+.tour-modal-success p { font-size: 0.88rem; color: var(--text); line-height: 1.7; }
+.tour-modal-error { display: none; margin-top: 1rem; font-size: 0.8rem; color: #a33; text-align: center; }
+.tour-modal-error.visible { display: block; }
+@media (max-width: 560px) {
+  .tour-modal-grid { grid-template-columns: 1fr; gap: 0; }
+  .tour-modal-body { padding: 2rem 1.5rem 1.5rem; }
+  .tour-modal-title { font-size: 1.9rem; }
+}
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header role="banner">
+<nav id="nav">
+  <a href="#home" class="nav-logo" aria-label="The Coastal Collection home">
+    <svg viewBox="0 0 48 48" aria-hidden="true" fill="none">
+      <circle cx="24" cy="11" r="4.5" stroke="#d4b483" stroke-width="1.4"/>
+      <g stroke="#d4b483" stroke-width="1.2" stroke-linecap="round">
+        <line x1="24" y1="3.2" x2="24" y2="5.4"/>
+        <line x1="31.2" y1="6.4" x2="29.6" y2="8"/>
+        <line x1="16.8" y1="6.4" x2="18.4" y2="8"/>
+        <line x1="33.5" y1="13" x2="31.2" y2="13"/>
+        <line x1="14.5" y1="13" x2="16.8" y2="13"/>
+      </g>
+      <path d="M12 30 L24 19 L36 30 V40 H12 Z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/>
+      <rect x="21.2" y="32.5" width="5.6" height="7.5" stroke="#fff" stroke-width="1.2"/>
+      <path d="M8 43.5 Q16 39.5 24 43.5 Q32 47.5 40 43.5" stroke="#d4b483" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <span>The Coastal<br>Collection</span>
+  </a>
+  <ul class="nav-links" id="primary-nav">
+    <li><a href="#plans">Floor Plans</a></li>
+    <li><a href="#available">Available Homes</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta open-tour-modal">Schedule a Tour</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+</nav>
+</header>
+
+<main id="main-content">
+
+<!-- ════════ HOMEPAGE ════════ -->
+<div class="view is-active" data-view="home" id="view-home">
+
+<section class="hero">
+  <img class="hero-bg" src="https://static.wixstatic.com/media/1c6ae3_bb086c824abd4b1a88339ae813c7f14e~mv2.png/v1/fill/w_1920,h_1080,al_c,q_80,enc_auto/x.jpg" alt="Aerial view of four new residences on Trouville Avenue in Grover Beach, digitally enhanced to show anticipated completed appearance">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Come Home<br><em>to the Coast</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Four new residences in Grover Beach</p>
+    <a href="#homes" class="hero-btn">Explore the Collection</a>
+    <span class="hero-note">Hero photograph digitally enhanced using AI to illustrate anticipated completed appearance. Final finishes may vary.</span>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="intro-band">
+  <div class="stat"><span class="stat-num">1,743</span><span class="stat-label">Square Feet</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Bedrooms</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">2</span><span class="stat-label">Bathrooms</span></div>
+  <div class="stat-divider"></div>
+  <div class="stat"><span class="stat-num">2</span><span class="stat-label">Car Garage</span></div>
+</div>
+
+<section class="section" id="why">
+  <h2 class="why-title">Why <em>here</em></h2>
+  <p class="why-subtitle">A small collection, built for how the coast is actually lived.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><path d="M10 42 Q20 28 30 42 T50 42 T70 42"/><path d="M10 52 Q20 40 30 52 T50 52 T70 52"/><path d="M16 28c4-10 18-14 24-4 4-12 20-10 24 2"/></svg></div>
+      <div class="feature-title">Blocks from the ocean</div>
+      <p class="feature-text">A short walk to the water. Grover Beach is the setting — not a backdrop you drive to on weekends.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><rect x="18" y="34" width="44" height="28"/><path d="M18 34 L40 16 L62 34"/><rect x="24" y="18" width="32" height="8"/><line x1="24" y1="18" x2="24" y2="14"/><line x1="56" y1="18" x2="56" y2="14"/><rect x="36" y="44" width="8" height="18"/></svg></div>
+      <div class="feature-title">Private rooftop decks</div>
+      <p class="feature-text">Each home has its own roof deck, engineered to hold a hot tub, with room for a table, a lounge, and the evening air.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><rect x="14" y="18" width="20" height="46"/><rect x="46" y="18" width="20" height="46"/><line x1="34" y1="40" x2="46" y2="40"/><line x1="24" y1="28" x2="24" y2="36"/><line x1="56" y1="28" x2="56" y2="36"/></svg></div>
+      <div class="feature-title">Quiet between the walls</div>
+      <p class="feature-text">Construction between the homes is planned for privacy and sound separation — four residences, not one long echo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><rect x="22" y="18" width="36" height="46"/><line x1="40" y1="18" x2="40" y2="64"/><line x1="22" y1="40" x2="58" y2="40"/><circle cx="40" cy="10" r="3"/><line x1="40" y1="4" x2="40" y2="6"/></svg></div>
+      <div class="feature-title">Light-filled open living</div>
+      <p class="feature-text">Kitchens, great rooms, and front decks share one level of living. The rooms are open. The light is not an afterthought.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><path d="M12 50 L24 36 L36 50 V64 H12 Z"/><path d="M44 50 L56 36 L68 50 V64 H44 Z"/><rect x="20" y="54" width="8" height="10"/><rect x="52" y="54" width="8" height="10"/></svg></div>
+      <div class="feature-title">Two plans, four homes</div>
+      <p class="feature-text">Vista on the ends. Garden in the middle. Same square footage, two ways of arranging a day on the coast.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 80 80" fill="none" stroke="#b8966a" stroke-width="1.4"><path d="M40 14c-10 0-18 8-18 20 0 16 18 34 18 34s18-18 18-34c0-12-8-20-18-20z"/><circle cx="40" cy="34" r="6"/><path d="M16 68 H64"/></svg></div>
+      <div class="feature-title">Moments from 4th Street</div>
+      <p class="feature-text">Supper, coffee, a walk after. The revitalized 4th Street district is close enough to treat as a neighborhood errand.</p>
+    </div>
+  </div>
+  <div class="overview">
+    <h3>805–835 Trouville Avenue, Grover Beach</h3>
+    <p>The Coastal Collection is four new residences on a quiet Grover Beach street — blocks from the ocean, moments from 4th Street. Each home is approximately 1,743 square feet: three bedrooms, two baths, a private two-car garage, and living that opens to a front deck and a private roof above.</p>
+    <p>Final touches are underway. The street is small on purpose. The rest of the day belongs to the coast.</p>
+  </div>
+</section>
+
+<section id="lifestyle" class="lifestyle">
+  <div class="lifestyle-image">
+    <img src="https://static.wixstatic.com/media/8a8140_0d9ab73403df49ecbf6ffaecc0f0c528~mv2.jpeg/v1/fill/w_1400,h_900,al_c,q_80,enc_auto/x.jpg" alt="Private rooftop deck with dining and spa cover, Grover Beach neighborhood beyond" loading="lazy">
+    <div class="lifestyle-image-overlay"></div>
+  </div>
+  <div class="lifestyle-content">
+    <p class="section-label">The Coastal Lifestyle</p>
+    <h2 class="lifestyle-title">A quiet street.<br><em>An ocean close by.</em></h2>
+    <ul class="lifestyle-points">
+      <li>
+        <div class="point-dot"></div>
+        <div class="point-text"><strong>Evenings on the roof</strong>A private deck above the street. Room for a hot tub, a table, and the last of the light.</div>
+      </li>
+      <li>
+        <div class="point-dot"></div>
+        <div class="point-text"><strong>Mornings at the beach</strong>Pismo State Beach and the Monarch Butterfly Grove sit close enough to count as neighborhood errands, not day trips.</div>
+      </li>
+      <li>
+        <div class="point-dot"></div>
+        <div class="point-text"><strong>Supper on 4th</strong>The 4th Street dining district is a short walk. Come home when the evening has had enough of you.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="ambience">
+  <div class="ambience-img-wrap">
+    <img src="https://static.wixstatic.com/media/8a8140_627d14b0805841ffab1e90383e2f3590~mv2.jpeg/v1/fill/w_1400,h_900,al_c,q_80,enc_auto/x.jpg" alt="Rooftop lounge furniture looking toward the Grover Beach neighborhood" loading="lazy">
+    <div class="ambience-img-accent"></div>
+  </div>
+  <div class="ambience-text">
+    <p class="section-label">On the roof</p>
+    <p class="ambience-quote">Unhurried hours. <em>Uncomplicated light.</em></p>
+    <p class="ambience-body">Each residence includes a private rooftop deck — engineered to accommodate a hot tub, with room for lounging, dining, or simply sitting still at the end of the day. Ocean views are part of the brief. The hours you keep up there are yours.</p>
+    <p class="ambience-note">Conceptual use of the rooftop is shown for illustration. Final conditions may vary.</p>
+  </div>
+</section>
+
+<section class="homes" id="homes">
+  <div class="homes-header">
+    <p class="section-label">The Collection</p>
+    <h2 class="section-title">Two <em>distinct</em> floor plans</h2>
+    <p class="homes-sub">Four homes · Grover Beach · Final touches underway</p>
+  </div>
+  <div class="homes-grid">
+    <a class="home-card" href="#plans">
+      <div class="home-card-image"><img src="https://static.wixstatic.com/media/8a8140_491d6db687b14e2cad5f81e4c3c42fd2~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_80,enc_auto/x.jpg" alt="Vista plan kitchen and great room with peninsula" loading="lazy"></div>
+      <div class="home-card-top">
+        <div class="home-name">Vista</div>
+        <div class="home-sqft">Homes 1 &amp; 4 · 1,743 SF</div>
+      </div>
+      <div class="home-card-body">
+        <div class="home-specs">
+          <div class="home-spec"><div class="spec-num">3</div><div class="spec-label">Beds</div></div>
+          <div class="home-spec"><div class="spec-num">2</div><div class="spec-label">Baths</div></div>
+          <div class="home-spec"><div class="spec-num">2</div><div class="spec-label">Garage</div></div>
+        </div>
+        <span class="home-card-tag">The end homes</span>
+        <p class="home-card-desc">Extra windows on the ends of the collection. Primary suite, kitchen, and great room share the upper living level around a peninsula kitchen. Front deck plus rooftop.</p>
+        <span class="home-card-link">Learn More →</span>
+      </div>
+    </a>
+    <a class="home-card" href="#plans">
+      <div class="home-card-image"><img src="https://static.wixstatic.com/media/1c6ae3_456af5cf48784f88bb9ad7a4e54b7164~mv2.png/v1/fill/w_1200,h_800,al_c,q_80,enc_auto/x.jpg" alt="Garden plan open kitchen, island, and living room" loading="lazy"></div>
+      <div class="home-card-top">
+        <div class="home-name">Garden</div>
+        <div class="home-sqft">Homes 2 &amp; 3 · 1,743 SF</div>
+      </div>
+      <div class="home-card-body">
+        <div class="home-specs">
+          <div class="home-spec"><div class="spec-num">3</div><div class="spec-label">Beds</div></div>
+          <div class="home-spec"><div class="spec-num">2</div><div class="spec-label">Baths</div></div>
+          <div class="home-spec"><div class="spec-num">2</div><div class="spec-label">Garage</div></div>
+        </div>
+        <span class="home-card-tag">The middle homes</span>
+        <p class="home-card-desc">Primary suite on the lower level. Upstairs, the great room and island kitchen open to the front deck. The rooftop sits above that — same coast, a quieter bedroom.</p>
+        <span class="home-card-link">Learn More →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <p class="section-label">Find Us</p>
+  <h2 class="location-title">Grover <em>Beach</em></h2>
+  <div class="section-rule"></div>
+  <div class="location-row">
+    <div class="location-info">
+      <p class="location-addr">805–835 Trouville Avenue</p>
+      <p class="location-city">Grover Beach, California</p>
+      <img class="location-pin" src="https://static.wixstatic.com/media/1c6ae3_c064a31a9c654ff286ce05131ac459ba~mv2.png/v1/fill/w_640,h_360,al_c,q_80,enc_auto/x.jpg" alt="Aerial of Grover Beach looking toward the ocean, with The Coastal Collection marked on Trouville Avenue" loading="lazy">
+      <a class="btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=805+Trouville+Avenue+Grover+Beach+CA" target="_blank" rel="noopener noreferrer">Get Directions</a>
+    </div>
+    <div class="location-map">
+      <iframe title="Map of 805 Trouville Avenue, Grover Beach, California" src="https://maps.google.com/maps?q=805%20Trouville%20Avenue%20Grover%20Beach%20CA&z=16&output=embed" width="100%" height="340" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="cta-title">Begin <em>here.</em></h2>
+  <p class="cta-sub">Tessa Sanders · <a href="tel:8057042442">805.704.2442</a> · <a href="mailto:tessasandershomes@gmail.com">tessasandershomes@gmail.com</a></p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-primary open-tour-modal">Schedule a Tour</a>
+    <a href="https://youtu.be/8jT8sGaXy4w" class="btn-ghost" target="_blank" rel="noopener noreferrer">Watch Drone Video</a>
+  </div>
+</section>
+</div>
+
+<!-- ════════ FLOOR PLANS ════════ -->
+<div class="view" data-view="plans" id="view-plans">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://static.wixstatic.com/media/8a8140_972e3ad8de954df5b592d7cfc4388a57~mv2.jpeg/v1/fill/w_1600,h_900,al_c,q_80,enc_auto/x.jpg" alt="Street-level residences along Trouville Avenue in Grover Beach">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-label">Floor Plans</p>
+      <h1 class="page-hero-title">The <em>Collection</em></h1>
+      <div class="hero-divider"></div>
+      <p class="page-hero-sub">Two layouts · Four homes · Grover Beach</p>
+    </div>
+  </section>
+
+  <div class="intro-strip fade-up">
+    <p class="intro-strip-text">Same square footage. Two ways of arranging a day — one with living on the upper level, one with the primary suite below.</p>
+    <div class="intro-strip-stats">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-lbl">Plans</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-lbl">Homes</span></div>
+      <div class="stat"><span class="stat-num">1,743</span><span class="stat-lbl">Square Feet</span></div>
+    </div>
+  </div>
+
+  <section class="plans-section">
+    <p class="section-eyebrow" style="text-align:center">Choose Your Home</p>
+    <h2 class="section-title">Vista <em>&amp;</em> Garden</h2>
+    <span class="section-rule"></span>
+    <div class="plans-grid">
+      <article class="plan-card fade-up">
+        <div class="plan-card-image"><img src="https://static.wixstatic.com/media/1c6ae3_1983e085e7f245dbacf1eb80b6a13ccd~mv2.png/v1/fill/w_900,h_1100,al_c,q_80,enc_auto/x.jpg" alt="Vista floor plan drawing — primary, kitchen, and great room on the upper living level"></div>
+        <div class="plan-card-info">
+          <p class="plan-card-eyebrow">Plan one · Homes 1 &amp; 4</p>
+          <h3 class="plan-card-name">Vista</h3>
+          <p class="plan-card-tagline">The end homes, with extra windows</p>
+          <p class="plan-card-desc">Designed as the end residences in the collection, Vista takes the extra glass. The upper level brings the primary suite, kitchen, and great room together around a peninsula kitchen. A private front deck extends the living; the rooftop sits above, with room for a hot tub, lounge, or a table in the wind.</p>
+          <a class="plan-card-cta" href="#contact">Inquire about Vista</a>
+        </div>
+      </article>
+      <article class="plan-card fade-up">
+        <div class="plan-card-image"><img src="https://static.wixstatic.com/media/1c6ae3_16584b23d762470998d4f3b84b6e34f3~mv2.png/v1/fill/w_900,h_1100,al_c,q_80,enc_auto/x.jpg" alt="Garden floor plan drawing — primary suite on the lower level, island kitchen upstairs"></div>
+        <div class="plan-card-info">
+          <p class="plan-card-eyebrow">Plan two · Homes 2 &amp; 3</p>
+          <h3 class="plan-card-name">Garden</h3>
+          <p class="plan-card-tagline">A quieter primary, one floor down</p>
+          <p class="plan-card-desc">Garden keeps the primary suite on the lower level, apart from the bedrooms, kitchen, and main living upstairs. The upper floor centers on an open great room and a freestanding island, flowing to the front deck. Above that, the same private rooftop — ocean on the horizon, a place to sit when the day is done.</p>
+          <a class="plan-card-cta" href="#contact">Inquire about Garden</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="features-band">
+    <p class="section-eyebrow" style="text-align:center">Signature Rooms</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:1rem;font-size:clamp(2.2rem,4vw,3.2rem)">Kitchen · Rooftop · <em>Primary</em></h2>
+    <span class="section-rule"></span>
+    <div class="features-band-grid">
+      <div class="feature-block fade-up">
+        <img src="https://static.wixstatic.com/media/8a8140_491d6db687b14e2cad5f81e4c3c42fd2~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_80,enc_auto/x.jpg" alt="Peninsula kitchen opening to the great room" loading="lazy">
+        <h3 class="feature-block-title">Kitchen</h3>
+        <p class="feature-block-text">Vista gathers around a peninsula. Garden uses a freestanding island. Both open to the great room and the front deck beyond.</p>
+      </div>
+      <div class="feature-block fade-up">
+        <img src="https://static.wixstatic.com/media/8a8140_0d9ab73403df49ecbf6ffaecc0f0c528~mv2.jpeg/v1/fill/w_1400,h_900,al_c,q_80,enc_auto/x.jpg" alt="Private rooftop deck" loading="lazy">
+        <h3 class="feature-block-title">Rooftop</h3>
+        <p class="feature-block-text">A private deck on every home, engineered to accommodate a hot tub, with space for dining or a late, unfinished conversation.</p>
+      </div>
+      <div class="feature-block fade-up">
+        <img src="https://static.wixstatic.com/media/8a8140_5f45511f07df4bb2bc7d866bb8a8e705~mv2.jpeg/v1/fill/w_1200,h_800,al_c,q_80,enc_auto/x.jpg" alt="Primary bedroom" loading="lazy">
+        <h3 class="feature-block-title">Primary suite</h3>
+        <p class="feature-block-text">On Vista, the primary shares the upper living level. On Garden, it sits below — same size home, a different kind of quiet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2 class="cta-strip-title">Walk the <em>plans</em> with us.</h2>
+    <p class="cta-strip-sub">Tessa Sanders · 805.704.2442</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary open-tour-modal">Schedule a Tour</a>
+      <a href="#available" class="btn-ghost">Available Homes</a>
+    </div>
+  </section>
+</div>
+
+<!-- ════════ AVAILABLE HOMES ════════ -->
+<div class="view" data-view="available" id="view-available">
+  <section class="page-hero heavy">
+    <img class="page-hero-bg" src="https://static.wixstatic.com/media/8a8140_627d14b0805841ffab1e90383e2f3590~mv2.jpeg/v1/fill/w_1600,h_900,al_c,q_80,enc_auto/x.jpg" alt="Rooftop of The Coastal Collection looking toward Grover Beach">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-label">Inventory</p>
+      <h1 class="page-hero-title">Available <em>Homes</em></h1>
+      <div class="hero-divider"></div>
+      <p class="page-hero-sub">805–835 Trouville Avenue · Grover Beach</p>
+    </div>
+  </section>
+
+  <div class="status-band fade-up">
+    <p class="status-kicker">Final touches underway</p>
+    <p>Four newly built residences at 805–835 Trouville Avenue are receiving their last work and will be ready soon. Ask for current pricing, availability, and showing times — none of that is listed here yet.</p>
+  </div>
+
+  <section class="avail-section">
+    <p class="section-eyebrow" style="text-align:center">The Street</p>
+    <h2 class="section-title">Four homes. <em>Two plans.</em></h2>
+    <span class="section-rule"></span>
+    <div class="avail-grid">
+      <a class="avail-card fade-up" href="#contact">
+        <span class="card-badge">Final touches</span>
+        <div class="card-visual"><img src="https://static.wixstatic.com/media/8a8140_25110c25405c41de878d45c5a3b8b905~mv2.jpeg/v1/fill/w_800,h_500,al_c,q_80,enc_auto/x.jpg" alt="Home 1 — Vista living room" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-lot-tag">Home 1</p>
+          <h3 class="card-plan-name">Vista</h3>
+          <p class="card-tagline">End home · extra windows</p>
+          <div class="card-specs">
+            <div class="card-spec"><div class="cs-num">3</div><div class="cs-label">Beds</div></div>
+            <div class="card-spec"><div class="cs-num">2</div><div class="cs-label">Baths</div></div>
+            <div class="card-spec"><div class="cs-num">1,743</div><div class="cs-label">SF</div></div>
+          </div>
+          <span class="card-link">Inquire</span>
+        </div>
+      </a>
+      <a class="avail-card fade-up" href="#contact">
+        <span class="card-badge">Final touches</span>
+        <div class="card-visual"><img src="https://static.wixstatic.com/media/1c6ae3_456af5cf48784f88bb9ad7a4e54b7164~mv2.png/v1/fill/w_800,h_500,al_c,q_80,enc_auto/x.jpg" alt="Home 2 — Garden kitchen and living" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-lot-tag">Home 2</p>
+          <h3 class="card-plan-name">Garden</h3>
+          <p class="card-tagline">Primary on the lower level</p>
+          <div class="card-specs">
+            <div class="card-spec"><div class="cs-num">3</div><div class="cs-label">Beds</div></div>
+            <div class="card-spec"><div class="cs-num">2</div><div class="cs-label">Baths</div></div>
+            <div class="card-spec"><div class="cs-num">1,743</div><div class="cs-label">SF</div></div>
+          </div>
+          <span class="card-link">Inquire</span>
+        </div>
+      </a>
+      <a class="avail-card fade-up" href="#contact">
+        <span class="card-badge">Final touches</span>
+        <div class="card-visual"><img src="https://static.wixstatic.com/media/1c6ae3_99c14167d7844f34b6570d33010f9462~mv2.png/v1/fill/w_800,h_500,al_c,q_80,enc_auto/x.jpg" alt="Home 3 — Garden kitchen island" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-lot-tag">Home 3</p>
+          <h3 class="card-plan-name">Garden</h3>
+          <p class="card-tagline">Island kitchen · front deck</p>
+          <div class="card-specs">
+            <div class="card-spec"><div class="cs-num">3</div><div class="cs-label">Beds</div></div>
+            <div class="card-spec"><div class="cs-num">2</div><div class="cs-label">Baths</div></div>
+            <div class="card-spec"><div class="cs-num">1,743</div><div class="cs-label">SF</div></div>
+          </div>
+          <span class="card-link">Inquire</span>
+        </div>
+      </a>
+      <a class="avail-card fade-up" href="#contact">
+        <span class="card-badge">Final touches</span>
+        <div class="card-visual"><img src="https://static.wixstatic.com/media/8a8140_7476676d600043afa4c80a4581fba899~mv2.jpeg/v1/fill/w_800,h_500,al_c,q_80,enc_auto/x.jpg" alt="Home 4 — Vista living and kitchen" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-lot-tag">Home 4</p>
+          <h3 class="card-plan-name">Vista</h3>
+          <p class="card-tagline">End home · upper living</p>
+          <div class="card-specs">
+            <div class="card-spec"><div class="cs-num">3</div><div class="cs-label">Beds</div></div>
+            <div class="card-spec"><div class="cs-num">2</div><div class="cs-label">Baths</div></div>
+            <div class="card-spec"><div class="cs-num">1,743</div><div class="cs-label">SF</div></div>
+          </div>
+          <span class="card-link">Inquire</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <div class="gallery-wrap fade-up">
+    <div class="gallery">
+      <div class="gallery-item"><img src="https://static.wixstatic.com/media/8a8140_7476676d600043afa4c80a4581fba899~mv2.jpeg/v1/fill/w_1200,h_1400,al_c,q_80,enc_auto/x.jpg" alt="Living room opening to the front deck" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://static.wixstatic.com/media/8a8140_acc9f9e1f89e44f98122b3d0bd19b456~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_80,enc_auto/x.jpg" alt="Private front deck" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://static.wixstatic.com/media/8a8140_93a76045634c4beeaa2944be95e48e44~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_80,enc_auto/x.jpg" alt="Primary bath vanity" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://static.wixstatic.com/media/8a8140_2645952ccd84462bbffced552b421bc9~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_80,enc_auto/x.jpg" alt="Primary bath shower and water closet" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://static.wixstatic.com/media/1c6ae3_8726cd987e4e4275949cdf637f7323fc~mv2.png/v1/fill/w_800,h_600,al_c,q_80,enc_auto/x.jpg" alt="Conceptual rooftop use with ocean on the horizon" loading="lazy"></div>
+    </div>
+    <p class="gallery-caption">Interiors may be virtually staged. Rooftop lifestyle image is conceptual; final conditions may vary.</p>
+  </div>
+
+  <div class="video-section fade-up">
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/8jT8sGaXy4w" title="Trouville drone tour — new construction coastal residences" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">Trouville · New Construction Coastal Residences · Drone Tour — Real Estate Supply Co.</p>
+  </div>
+  <p class="disclaimer">Images have been virtually staged using AI to illustrate potential furnishings and décor. Actual finishes and features are shown where applicable. Hero and some rooftop views are digitally enhanced or conceptual; final finishes may vary.</p>
+
+  <section class="cta-strip">
+    <h2 class="cta-strip-title">Ask about the <em>street.</em></h2>
+    <p class="cta-strip-sub">Pricing and lot-by-lot status are not published yet.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary open-tour-modal">Schedule a Tour</a>
+      <a href="#plans" class="btn-ghost">Floor Plans</a>
+    </div>
+  </section>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
+<div class="view" data-view="about" id="view-about">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://static.wixstatic.com/media/8a8140_acc9f9e1f89e44f98122b3d0bd19b456~mv2.jpeg/v1/fill/w_1600,h_900,al_c,q_80,enc_auto/x.jpg" alt="Front deck of a Coastal Collection residence looking toward the street">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-label">About</p>
+      <h1 class="page-hero-title">Four homes. <em>One street.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="page-hero-sub">The Coastal Collection of Grover Beach</p>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="story-inner">
+      <div class="story-text-col fade-up">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">A small collection<br>on <em>Trouville.</em></h2>
+        <div class="rule-left"></div>
+        <div class="story-body">
+          <p>The Coastal Collection is four new residences at 805–835 Trouville Avenue in Grover Beach. Not a hillside gated neighborhood. A street — close to the water, close to 4th Street, sized so you can know every house from the sidewalk.</p>
+          <p>Two floor plans share the same 1,743 square feet, three bedrooms, two baths, and a two-car garage. Vista takes the ends and the extra windows. Garden keeps the primary suite downstairs. Both open to a front deck and a private roof.</p>
+          <p>Final touches are underway. The next chapter is whoever walks the street and stays.</p>
+        </div>
+      </div>
+      <div class="story-quote-col fade-up">
+        <p class="pull-quote">The rest of the day belongs to the coast.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="builder-section fade-up">
+    <div class="builder-inner">
+      <span class="builder-rule"></span>
+      <h2 class="builder-heading">S &amp; S Homes of the Central Coast</h2>
+      <span class="builder-rule"></span>
+      <div class="builder-body">
+        <p>Built by S &amp; S Homes of the Central Coast, Arroyo Grande. Four residences on Trouville Avenue — a small collection, finished as the coast requires.</p>
+      </div>
+      <p class="builder-final-quote">A quiet street. An ocean close by.</p>
+    </div>
+  </section>
+
+  <section class="pillars-section">
+    <div class="pillars-inner">
+      <div class="pillars-header fade-up">
+        <p class="section-eyebrow">How the homes are kept</p>
+        <h2 class="section-title">Light. Privacy. <em>The roof.</em></h2>
+      </div>
+      <div class="pillars-grid">
+        <article class="pillar-card fade-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b8966a" stroke-width="1.4"><rect x="5" y="4" width="14" height="16"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <h3 class="pillar-title">Light</h3>
+          <p class="pillar-text">Open living, extra glass on the end homes, rooms that run to the front deck. The coast is the north star — the interiors are built to take it in.</p>
+        </article>
+        <article class="pillar-card fade-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b8966a" stroke-width="1.4"><rect x="3" y="4" width="7" height="16"/><rect x="14" y="4" width="7" height="16"/></svg></div>
+          <h3 class="pillar-title">Privacy</h3>
+          <p class="pillar-text">Four attached homes, not one long room. Construction between the residences is planned for sound separation and a quieter neighbor.</p>
+        </article>
+        <article class="pillar-card fade-up">
+          <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b8966a" stroke-width="1.4"><path d="M3 14 L12 6 L21 14 V21 H3 Z"/><rect x="7" y="4" width="10" height="4"/></svg></div>
+          <h3 class="pillar-title">The roof</h3>
+          <p class="pillar-text">A private rooftop deck on every home, engineered for a hot tub, held for evenings that do not need an errand.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="team-inner">
+      <p class="section-eyebrow">The team</p>
+      <h2 class="section-title">Vali <em>&amp;</em> Tessa</h2>
+      <span class="section-rule"></span>
+      <div class="team-grid">
+        <article class="team-card fade-up">
+          <img class="team-photo" src="https://static.wixstatic.com/media/1c6ae3_eb9ebe74def14b97a320872860a10f01~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_auto/x.jpg" alt="Vali Nemetz, broker" loading="lazy">
+          <h3 class="team-name">Vali Nemetz</h3>
+          <p class="team-title">Broker</p>
+          <p class="team-bio">A licensed broker with an MBA in Real Estate and nearly twenty years in residential development and new construction. She has spent those years walking projects from the ground up — and she brings that same firsthand eye to this street.</p>
+          <div class="team-contact">
+            <a href="mailto:valinemetz@gmail.com">valinemetz@gmail.com</a>
+            <a href="tel:6615993672">661.599.3672</a>
+            <span>DRE #02133568</span>
+          </div>
+        </article>
+        <article class="team-card fade-up">
+          <img class="team-photo" src="https://static.wixstatic.com/media/1c6ae3_d1efadc7d7d3466cb5cb28a59cdc82c5~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_auto/x.jpg" alt="Tessa Sanders, sales agent" loading="lazy">
+          <h3 class="team-name">Tessa Sanders</h3>
+          <p class="team-title">Sales Agent</p>
+          <p class="team-bio">A Central Coast agent with eight years in new-home sales and a family tie to this collection. Her family brought the development to Grover Beach; she is the one who walks Trouville with you.</p>
+          <div class="team-contact">
+            <a href="mailto:tessasandershomes@gmail.com">tessasandershomes@gmail.com</a>
+            <a href="tel:8057042442">805.704.2442</a>
+            <span>DRE #02052252</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="lender-section">
+    <div class="lender-inner">
+      <div class="fade-up">
+        <p class="section-eyebrow">Preferred lender</p>
+        <h2 class="lender-heading">Jeremy <em>Engle</em></h2>
+        <div class="rule-left"></div>
+        <p class="lender-bio">Loan Officer · Mortgage Consultant, Engle Mortgage Team. The Coastal Collection works with a local lender so financing a new home on Trouville can stay straightforward.</p>
+        <div class="lender-contact-links">
+          <a href="tel:8055442775">805-544-2775</a>
+          <a href="mailto:jeremy@jeremyengle.com">jeremy@jeremyengle.com</a>
+          <span>NMLS 2427</span>
+        </div>
+        <a class="lender-btn" href="https://www.jeremyengle.com" target="_blank" rel="noopener noreferrer">Visit jeremyengle.com</a>
+      </div>
+      <div class="lender-photo-wrap fade-up">
+        <img src="https://static.wixstatic.com/media/1c6ae3_9941909049f14e04ab8634c93f780503~mv2.webp/v1/fill/w_480,h_640,al_c,q_80,enc_auto/x.jpg" alt="Jeremy Engle, loan officer" loading="lazy">
+        <p class="lender-logo-bar">Engle Mortgage Team</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2 class="cta-strip-title">Come see the <em>street.</em></h2>
+    <p class="cta-strip-sub">Tessa Sanders · 805.704.2442 · tessasandershomes@gmail.com</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary open-tour-modal">Schedule a Tour</a>
+      <a href="#plans" class="btn-ghost">Floor Plans</a>
+    </div>
+  </section>
+</div>
+
+<!-- ════════ CONTACT ════════ -->
+<div class="view" data-view="contact" id="view-contact">
+  <section class="page-hero">
+    <img class="page-hero-bg" src="https://static.wixstatic.com/media/8a8140_0d9ab73403df49ecbf6ffaecc0f0c528~mv2.jpeg/v1/fill/w_1600,h_900,al_c,q_80,enc_auto/x.jpg" alt="Rooftop deck at The Coastal Collection, Grover Beach">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-label">Visit</p>
+      <h1 class="page-hero-title">Come walk the <em>street.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="page-hero-sub">We would rather show you Trouville than describe it.</p>
+    </div>
+  </section>
+
+  <div class="quick-band">
+    <a class="quick-item" href="tel:8057042442">
+      <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><path d="M6 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4c0 1-1 2-2 2A16 16 0 014 6c0-1 1-2 2-2z"/></svg></div>
+      <div><p class="quick-label">Call</p><p class="quick-value">805.704.2442</p></div>
+    </a>
+    <a class="quick-item" href="mailto:tessasandershomes@gmail.com">
+      <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 7 9-7"/></svg></div>
+      <div><p class="quick-label">Email</p><p class="quick-value">tessasandershomes@gmail.com</p></div>
+    </a>
+    <div class="quick-item">
+      <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><path d="M12 21s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="9" r="2.2"/></svg></div>
+      <div><p class="quick-label">Address</p><p class="quick-value">805–835 Trouville Avenue</p></div>
+    </div>
+    <div class="quick-item">
+      <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+      <div><p class="quick-label">City</p><p class="quick-value">Grover Beach, California</p></div>
+    </div>
+  </div>
+
+  <div class="contact-body">
+    <div class="form-side fade-up">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-title">Schedule a <em>tour</em></h2>
+      <span class="rule-left"></span>
+      <p class="form-intro">Tell us which plan you are looking at. This preview does not send a message — use the mail link after, or call Tessa directly.</p>
+      <form id="tour-form" action="mailto:tessasandershomes@gmail.com" method="post" enctype="text/plain" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="first">First name</label>
+            <input class="form-input" id="first" name="first" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last">Last name</label>
+            <input class="form-input" id="last" name="last" type="text" autocomplete="family-name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="plan">Plan</label>
+            <select class="form-select" id="plan" name="plan">
+              <option value="">Either / not sure</option>
+              <option>Vista — Homes 1 &amp; 4</option>
+              <option>Garden — Homes 2 &amp; 3</option>
+              <option>Home 1 · Vista</option>
+              <option>Home 2 · Garden</option>
+              <option>Home 3 · Garden</option>
+              <option>Home 4 · Vista</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <span class="form-label">Interest</span>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox" name="interest" value="Tour"><span class="check-dot"></span> Tour</label>
+              <label class="checkbox-label"><input type="checkbox" name="interest" value="Pricing"><span class="check-dot"></span> Pricing</label>
+              <label class="checkbox-label"><input type="checkbox" name="interest" value="Availability"><span class="check-dot"></span> Availability</label>
+              <label class="checkbox-label"><input type="checkbox" name="interest" value="Financing"><span class="check-dot"></span> Financing</label>
+              <label class="checkbox-label"><input type="checkbox" name="interest" value="Floor plans"><span class="check-dot"></span> Floor plans</label>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="When would you like to walk the street?"></textarea>
+          </div>
+        </div>
+        <div class="form-submit-row">
+          <button class="btn-submit" type="submit">Send inquiry →</button>
+          <p class="form-privacy">Preview only. Nothing is posted to a server.</p>
+        </div>
+      </form>
+      <div class="form-success" id="form-success" role="status">
+        <p class="success-title">Preview only — <em>nothing was sent.</em></p>
+        <p class="success-text">This listing page does not have a live form backend yet. Use <a id="mailto-fallback" href="mailto:tessasandershomes@gmail.com?subject=Coastal%20Collection%20Interest%20List">mailto: tessasandershomes@gmail.com</a> or call 805.704.2442.</p>
+      </div>
+    </div>
+
+    <aside class="info-side fade-up">
+      <div class="info-card">
+        <p class="info-card-label">Sales</p>
+        <div class="info-row">
+          <div class="info-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><path d="M12 21s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/></svg></div>
+          <div>
+            <p class="info-row-label">Address</p>
+            <p class="info-row-val">805–835 Trouville Avenue<br>Grover Beach, California</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><path d="M6 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4c0 1-1 2-2 2A16 16 0 014 6c0-1 1-2 2-2z"/></svg></div>
+          <div>
+            <p class="info-row-label">Tessa Sanders</p>
+            <p class="info-row-val"><a href="tel:8057042442">805.704.2442</a><br><a href="mailto:tessasandershomes@gmail.com">tessasandershomes@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d4b483" stroke-width="1.5"><path d="M6 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4c0 1-1 2-2 2A16 16 0 014 6c0-1 1-2 2-2z"/></svg></div>
+          <div>
+            <p class="info-row-label">Vali Nemetz</p>
+            <p class="info-row-val"><a href="tel:6615993672">661.599.3672</a><br><a href="mailto:valinemetz@gmail.com">valinemetz@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="map-card">
+        <iframe title="Map of 805 Trouville Avenue, Grover Beach" src="https://maps.google.com/maps?q=805%20Trouville%20Avenue%20Grover%20Beach%20CA&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </aside>
+  </div>
+
+  <section class="tour-strip fade-up">
+    <p class="section-eyebrow">What to expect</p>
+    <h2 class="tour-strip-title">Your <em>walk</em> on Trouville</h2>
+    <p class="tour-strip-sub">One visit. No crowd. An honest look at four homes on one street.</p>
+    <div class="tour-steps">
+      <div class="tour-step"><span class="step-num">1</span><span class="step-text">Schedule</span></div>
+      <div class="tour-step"><span class="step-num">2</span><span class="step-text">Walk the street</span></div>
+      <div class="tour-step"><span class="step-num">3</span><span class="step-text">See the plans</span></div>
+      <div class="tour-step"><span class="step-num">4</span><span class="step-text">Find your home</span></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <svg viewBox="0 0 48 48" aria-hidden="true" fill="none">
+      <circle cx="24" cy="11" r="4.5" stroke="#d4b483" stroke-width="1.4"/>
+      <g stroke="#d4b483" stroke-width="1.2" stroke-linecap="round">
+        <line x1="24" y1="3.2" x2="24" y2="5.4"/>
+        <line x1="31.2" y1="6.4" x2="29.6" y2="8"/>
+        <line x1="16.8" y1="6.4" x2="18.4" y2="8"/>
+        <line x1="33.5" y1="13" x2="31.2" y2="13"/>
+        <line x1="14.5" y1="13" x2="16.8" y2="13"/>
+      </g>
+      <path d="M12 30 L24 19 L36 30 V40 H12 Z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/>
+      <rect x="21.2" y="32.5" width="5.6" height="7.5" stroke="#fff" stroke-width="1.2"/>
+      <path d="M8 43.5 Q16 39.5 24 43.5 Q32 47.5 40 43.5" stroke="#d4b483" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <span>The Coastal Collection</span>
+  </div>
+  <div class="footer-contact">
+    Tessa Sanders · <a href="tel:8057042442">805.704.2442</a> · <a href="mailto:tessasandershomes@gmail.com">tessasandershomes@gmail.com</a><br>
+    Vali Nemetz · <a href="tel:6615993672">661.599.3672</a> · <a href="mailto:valinemetz@gmail.com">valinemetz@gmail.com</a>
+  </div>
+  <div class="footer-legal">
+    © 2026 The Coastal Collection · Grover Beach · S &amp; S Homes of the Central Coast<br>
+    DRE Tessa #02052252 · Vali #02133568
+    <div class="footer-social">
+      <a href="https://www.instagram.com/realestatesupplyco/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/realestatesupplyco" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tour-modal-overlay" id="tourModalOverlay" aria-hidden="true">
+  <div class="tour-modal" role="dialog" aria-modal="true" aria-labelledby="tourModalTitle">
+    <button type="button" class="tour-modal-close" id="tourModalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+    <img class="tour-modal-image" src="https://static.wixstatic.com/media/8a8140_627d14b0805841ffab1e90383e2f3590~mv2.jpeg/v1/crop/x_0,y_270,w_3000,h_1461/fill/w_1200,h_700,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/trouville%20top%20deck%202%202.jpeg" alt="Private rooftop deck at The Coastal Collection">
+    <div class="tour-modal-body">
+      <p class="tour-modal-eyebrow">The Coastal Collection at Trouville</p>
+      <h2 class="tour-modal-title" id="tourModalTitle">Schedule a <em>Tour</em></h2>
+      <span class="tour-modal-rule"></span>
+      <p class="tour-modal-sub">We&rsquo;d love to show you The Coastal Collection. Fill out the form below and we&rsquo;ll contact you to confirm your private tour.</p>
+
+      <form id="tourModalForm" name="schedule-tour" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="schedule-tour">
+        <p style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <p class="tour-modal-section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+          Your Information
+        </p>
+        <div class="tour-modal-grid">
+          <div class="tour-modal-field">
+            <label for="tm-name">Full Name *</label>
+            <input type="text" id="tm-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="tour-modal-field">
+            <label for="tm-phone">Phone Number *</label>
+            <input type="tel" id="tm-phone" name="phone" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="tour-modal-field">
+          <label for="tm-email">Email Address *</label>
+          <input type="email" id="tm-email" name="email" autocomplete="email" required>
+        </div>
+
+        <p class="tour-modal-section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="8" y1="3" x2="8" y2="6"/><line x1="16" y1="3" x2="16" y2="6"/></svg>
+          Preferred Tour Time
+        </p>
+        <div class="tour-modal-grid">
+          <div class="tour-modal-field">
+            <label for="tm-date">Preferred Date</label>
+            <input type="date" id="tm-date" name="preferred_date">
+          </div>
+          <div class="tour-modal-field">
+            <label for="tm-time">Preferred Time</label>
+            <input type="time" id="tm-time" name="preferred_time">
+          </div>
+        </div>
+
+        <div class="tour-modal-field">
+          <label for="tm-hear">How did you hear about us?</label>
+          <select id="tm-hear" name="how_heard">
+            <option value="">Select an option</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>Google Search</option>
+            <option>Drove / walked by</option>
+            <option>Referral</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="tour-modal-field">
+          <label for="tm-notes">Additional Comments (Optional)</label>
+          <textarea id="tm-notes" name="comments" placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <button type="submit" class="tour-modal-submit">Schedule My Tour</button>
+
+        <div class="tour-modal-privacy">
+          <span class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            Your information is secure and will never be shared.
+          </span>
+          <span>By submitting this form, you agree to be contacted about The Coastal Collection.</span>
+        </div>
+        <p class="tour-modal-error" id="tourModalError">Something went wrong sending your request &mdash; please call or email Tessa directly at 805.704.2442.</p>
+      </form>
+
+      <div class="tour-modal-success" id="tourModalSuccess">
+        <h3>Thank <em>you.</em></h3>
+        <p>Your tour request has been sent. Tessa or Vali will reach out shortly to confirm a time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nav = document.getElementById("nav");
+  var toggle = document.querySelector(".nav-toggle");
+  var menu = document.getElementById("primary-nav");
+  var titles = {
+    home: "The Coastal Collection | Grover Beach",
+    plans: "Floor Plans | The Coastal Collection",
+    available: "Available Homes | The Coastal Collection",
+    about: "About | The Coastal Collection",
+    contact: "Schedule a Tour | The Coastal Collection"
+  };
+  var known = { home: 1, plans: 1, available: 1, about: 1, contact: 1 };
+  var obs = null;
+
+  function hashName() {
+    return (location.hash || "#home").replace(/^#/, "") || "home";
+  }
+
+  function viewOf(h) {
+    if (h === "homes") return "home";
+    return known[h] ? h : "home";
+  }
+
+  function closeMenu() {
+    if (!menu || !toggle) return;
+    menu.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+  }
+
+  function restartKenBurns() {
+    document.querySelectorAll(".view.is-active .hero-bg, .view.is-active .page-hero-bg").forEach(function (el) {
+      el.style.animation = "none";
+      void el.offsetWidth;
+      el.style.animation = "";
+    });
+  }
+
+  function observeFades() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll(".fade-up").forEach(function (el) { el.classList.add("visible"); });
+      return;
+    }
+    if (obs) obs.disconnect();
+    obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".view.is-active .fade-up").forEach(function (el) {
+      el.classList.remove("visible");
+      obs.observe(el);
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  function setActive(view) {
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
+      var key = (a.getAttribute("href") || "").replace(/^#/, "");
+      a.classList.toggle("active", key === view);
+    });
+    var cta = document.querySelector(".nav-cta");
+    if (cta) cta.classList.toggle("active", view === "contact");
+  }
+
+  function route() {
+    var h = hashName();
+    var view = viewOf(h);
+    document.querySelectorAll("[data-view]").forEach(function (el) {
+      el.classList.toggle("is-active", el.getAttribute("data-view") === view);
+    });
+    var inner = view !== "home";
+    nav.classList.toggle("inner", inner);
+    nav.classList.toggle("scrolled", inner || window.scrollY > 80);
+    document.title = titles[view] || titles.home;
+    setActive(view);
+    closeMenu();
+    window.scrollTo(0, 0);
+    restartKenBurns();
+    observeFades();
+    if (h === "homes") {
+      requestAnimationFrame(function () {
+        var t = document.getElementById("homes");
+        if (t) t.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  }
+
+  window.addEventListener("hashchange", route);
+  window.addEventListener("scroll", function () {
+    if (nav.classList.contains("inner")) return;
+    nav.classList.toggle("scrolled", window.scrollY > 80);
+  }, { passive: true });
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      var open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+  }
+
+  var form = document.getElementById("tour-form");
+  var success = document.getElementById("form-success");
+  var mail = document.getElementById("mailto-fallback");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var fd = new FormData(form);
+      var interests = [];
+      form.querySelectorAll('input[name="interest"]:checked').forEach(function (c) {
+        interests.push(c.value);
+      });
+      var lines = [
+        "The Coastal Collection — tour inquiry",
+        "Name: " + (fd.get("first") || "") + " " + (fd.get("last") || ""),
+        "Email: " + (fd.get("email") || ""),
+        "Phone: " + (fd.get("phone") || ""),
+        "Plan: " + (fd.get("plan") || "n/a"),
+        "Interest: " + (interests.join(", ") || "n/a"),
+        "",
+        fd.get("message") || ""
+      ];
+      var href = "mailto:tessasandershomes@gmail.com?subject=" +
+        encodeURIComponent("Coastal Collection Interest List") +
+        "&body=" + encodeURIComponent(lines.join("\n"));
+      if (mail) mail.setAttribute("href", href);
+      form.style.display = "none";
+      if (success) success.classList.add("visible");
+    });
+  }
+
+  route();
+})();
+
+</script>
+
+<script>
+(function () {
+  var overlay = document.getElementById("tourModalOverlay");
+  var closeBtn = document.getElementById("tourModalClose");
+  var form = document.getElementById("tourModalForm");
+  var success = document.getElementById("tourModalSuccess");
+  var errorMsg = document.getElementById("tourModalError");
+  if (!overlay || !form) return;
+  var lastFocused = null;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    lastFocused = document.activeElement;
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    setTimeout(function () {
+      var first = document.getElementById("tm-name");
+      if (first) first.focus();
+    }, 300);
+  }
+
+  function closeModal() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  document.querySelectorAll(".open-tour-modal").forEach(function (el) {
+    el.addEventListener("click", openModal);
+  });
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeModal();
+  });
+
+  function encodeForm(data) {
+    return Object.keys(data)
+      .map(function (k) { return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]); })
+      .join("&");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    errorMsg.classList.remove("visible");
+    var fd = new FormData(form);
+    var payload = {};
+    fd.forEach(function (value, key) { payload[key] = value; });
+    var submitBtn = form.querySelector(".tour-modal-submit");
+    var originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending…";
+    submitBtn.disabled = true;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeForm(payload)
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("Form submission failed");
+        form.style.display = "none";
+        success.classList.add("visible");
+      })
+      .catch(function () {
+        errorMsg.classList.add("visible");
+      })
+      .finally(function () {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
+
