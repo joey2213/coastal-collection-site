@@ -406,6 +406,25 @@ nav.scrolled, nav.inner {
 }
 .home-card:hover .home-card-link { gap: 0.9rem; }
 
+
+.location-video {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border: var(--hairline);
+  box-shadow: 0 4px 30px rgba(44,36,32,0.10);
+  background: #1a1614;
+}
+.location-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(56vw, 540px);
+  object-fit: cover;
+  vertical-align: middle;
+}
+
 /* ── FIND US ── */
 .location { background: var(--warm); padding: 5rem 2.5rem; text-align: center; }
 .location .section-label { text-align: center; }
@@ -1387,6 +1406,19 @@ footer {
   <p class="section-label">Find Us</p>
   <h2 class="location-title">Grover <em>Beach</em></h2>
   <div class="section-rule"></div>
+  <div class="location-video">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="images/drone-loop-poster.jpg"
+      title="Aerial view of The Coastal Collection on Trouville Avenue"
+      aria-label="Muted looping aerial view of The Coastal Collection townhomes in Grover Beach">
+      <source src="videos/dreamy-loop.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="location-row">
     <div class="location-info">
       <p class="location-addr">805–835 Trouville Avenue</p>
